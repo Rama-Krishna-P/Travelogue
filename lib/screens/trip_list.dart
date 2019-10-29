@@ -9,7 +9,6 @@ import 'trip_detail.dart';
 class TripList extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return TripListState();
   }
 }
@@ -19,7 +18,6 @@ class TripListState extends State<TripList> {
   int _count = 0;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -57,7 +55,7 @@ class TripListState extends State<TripList> {
 
   ListView getTripsList() {
     TextStyle titleStyle = Theme.of(context).textTheme.subhead;
-    debugPrint('get trips list');
+    //debugPrint('get trips list');
 
     return ListView.builder(
         itemCount: _count,
@@ -128,7 +126,7 @@ class TripListState extends State<TripList> {
     setState(() {
       this._trips = trips;
       this._count = this._trips.length;
-      debugPrint("Trips count: " + this._trips.length.toString());
+      //debugPrint("Trips count: " + this._trips.length.toString());
     });
   }
 

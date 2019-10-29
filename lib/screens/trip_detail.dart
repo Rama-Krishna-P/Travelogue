@@ -71,7 +71,7 @@ class TripDetailState extends State<TripDetail> {
                     style: textStyle,
                     onChanged: (value) {
                       this.trip.name = value;
-                      debugPrint(this.trip.name);
+                      //debugPrint(this.trip.name);
                     },
                     decoration: InputDecoration(
                         labelText: "Name",

@@ -75,6 +75,7 @@ class PlaceListState extends State<PlaceList> {
 
   onViewChanged(int pageNo) {
     setState(() {
+      this._startPageNo = pageNo;
       _floatButtonVisible = _dates[pageNo] == _today;
     });
   }
@@ -96,7 +97,17 @@ class PlaceListState extends State<PlaceList> {
     }));
 
     if (result) {
-
+      refreshPlaces();
     }
+  }
+
+  void refreshPlaces() async {
+    String currentDate = this._dates[this._startPageNo];
+
+    List<Place> places = await Place().select().dateCreated.equals(currentDate).toList();
+
+    setState(() {
+      this._places[currentDate] = places;
+    });
   }
 }
